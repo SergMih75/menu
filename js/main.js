@@ -16,3 +16,14 @@ menuItem.forEach(menuItem => {
 		menuItem.childNodes[2].style.display = 'block'
 	})
 })
+
+document.addEventListener('click', e => {
+	if (
+		e.target.parentElement === null ||
+		!e.target.parentElement.classList.contains('menu-item')
+	) {
+		menuSubitem.forEach(menuSubitem => {
+			menuSubitem.style.display = 'none'
+		})
+	}
+})
